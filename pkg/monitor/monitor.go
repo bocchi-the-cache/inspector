@@ -9,27 +9,27 @@ import (
 var (
 	RequestReceiveTotalCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
 		Name: "bocchi_inspector_request_receive_total",
-		Help: "灰度工具收到的请求总数",
+		Help: "total number of requests received",
 	}, []string{"node", "method", "host"})
 
 	RequestSendTotalCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
 		Name: "bocchi_inspector_request_send_total",
-		Help: "灰度工具发出的请求总数",
+		Help: "total number of requests sent",
 	}, []string{"node", "method", "host", "dst", "status"})
 
 	ResultTotalCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
 		Name: "bocchi_inspector_result_total",
-		Help: "灰度工具对比结果",
+		Help: "result of http content checking",
 	}, []string{"node", "method", "status"})
 
 	ErrorTotalCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
 		Name: "bocchi_inspector_error_total",
-		Help: "灰度工具错误统计",
+		Help: "error of inspector",
 	}, []string{"node", "method", "process", "error"})
 
 	ElapsedMonitor = prometheus.NewHistogramVec(prometheus.HistogramOpts{
 		Name:    "RequestTimeConsumingStatistics",
-		Help:    "Api请求耗时统计",
+		Help:    "api request elapsed time histogram",
 		Buckets: []float64{0.1, 0.5, 1, 5, 10, 20, 50, 100, 500, 1000, 5000},
 	}, []string{"node", "process"})
 

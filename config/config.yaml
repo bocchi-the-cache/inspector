@@ -1,0 +1,12 @@
+http:
+  listen_port: 4399
+
+host:
+  baseline:
+    "127.0.0.1:9090"
+  test:
+    "127.0.0.1:8080"
+
+storage:
+  base_case_path:
+    "bad_case"
